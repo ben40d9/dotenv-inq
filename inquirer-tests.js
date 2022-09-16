@@ -38,11 +38,10 @@ inquirer
   .then((answers) => {
     //set those answers equal to process.env.XYZ
     console.log(process.env.EMAIL);
+    console.log(process.env.USERNAME);
     process.env.EMAIL = answers.email;
     console.log(process.env.EMAIL);
-
-    //just logs to show that i have values
-    console.log(`Hello ${answers.email} ${answers.ghUsername}!`);
+    console.log(process.env);
   })
   .catch((error) => {
     if (error.isTtyError) {
