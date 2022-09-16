@@ -1,5 +1,7 @@
 const inquirer = require("inquirer");
 
+// let email = process.env.EMAIL
+
 inquirer
   .prompt([
     {
@@ -34,6 +36,11 @@ inquirer
     },
   ])
   .then((answers) => {
+    //set those answers equal to process.env.XYZ
+    console.log(process.env.EMAIL);
+    process.env.EMAIL = answers.email;
+    console.log(process.env.EMAIL);
+
     //just logs to show that i have values
     console.log(`Hello ${answers.email} ${answers.ghUsername}!`);
   })
